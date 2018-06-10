@@ -21,3 +21,19 @@ var pivotIndex = function(nums) {
 };
 
 console.log(pivotIndex([1, 7, 3, 6, 5, 6]));
+
+// METHOD 2:
+
+var pivotIndex = function(nums) {
+  var totalSum = nums.reduce((accum, num) => accum + num, 0);
+  var leftSum = 0;
+  for (let i = 0; i < nums.length; i++) {
+    if (leftSum === totalSum - leftSum - nums[i]) {
+      return i;
+    }
+    leftSum += nums[i];
+  }
+  return -1;
+};
+
+console.log(pivotIndex([1, 7, 3, 6, 5, 6]));
