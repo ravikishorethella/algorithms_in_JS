@@ -1,3 +1,7 @@
 // We have to return the index of the first occurrence of needle in haystack, or -1 if needle is not part of haystack.
 // If the needle is empty then return 0
 
+var strStr = function(haystack, needle) {
+    return needle.length<1 ? 0 : 
+            haystack.includes(needle) ? haystack.indexOf(needle) : -1; 
+};
